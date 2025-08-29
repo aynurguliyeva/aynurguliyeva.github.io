@@ -3,41 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Aynur Guliyeva</title>
-    <!-- Poppins font from Google Fonts -->
+    <title>My Projects - Aynur Guliyeva</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons in the footer -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <!-- Phosphor Icons for the chat buttons -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.0"></script>
-    <!-- Tailwind CSS from CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* General styles to match the new hero section aesthetic */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #F5F5F5;
-        }
+   <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #F5F5F5;
+    }
+    .project-card {
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid #e9e9f9;
+        cursor: pointer;
+    }
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(255, 135, 171, 0.2);
+        border: 1px solid #FF87AB;
+        background-color: rgba(255, 135, 171, 0.164);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+    .project-image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1.5rem;
+    }
+    .project-image {
+        transition: transform 0.6s ease-in-out;
+    }
+    .project-card:hover .project-image {
+        transform: scale(1.05);
+    }
 
-        /* --- New Hero Section styles --- */
-        #hero {
-            background-color: #FFFFFF; /* White background to match the PNG */
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative; /* Added to position the glow overlay correctly */
-            overflow: hidden; /* Added to contain the glow within the section */
-        }
 
-        /* Custom shadow for the navbar hover effect */
-        .shadow-3xl {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
 
-        /* --- Chatbot-specific styles --- */
+
+     /* --- Chatbot-specific styles --- */
         #chatbot-container {
             width: 320px;
             height: 480px;
@@ -136,89 +142,141 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
-        /* New CSS for the mouse glow effect */
-        #mouse-glow-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none; /* Allows mouse events to pass through to the image */
-            transition: opacity 0.3s ease-in-out;
-            opacity: 0;
-        }
-    </style>
+</style>
 </head>
 <body>
 
-    <!-- Navigation Bar - Now with a light pink background -->
-    <nav id="navbar" class="fixed top-3 left-0 w-full z-50 transition-all duration-300 ease-in-out">
-        <div class="container mx-auto max-w-7xl p-4 md:px-6 rounded-full bg-pink-100 backdrop-blur-md shadow-2xl hover:shadow-3xl transition-shadow duration-300 border-b border-gray-200">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto max-w-7xl p-4 md:px-6 rounded-2xl bg-pink-100 backdrop-blur-md shadow-2xl hover:shadow-3xl transition-shadow duration-300 border-b border-gray-200">
             <div class="flex justify-between items-center">
-                <a href="index.html" class="text-xl font-bold text-[#333333] hover:text-[#FF87AB] transition-colors duration-300">AG</a>
+                <a href="indexx.html" class="text-xl font-bold text-[#333333] hover:text-[#FF87AB] transition-colors duration-300">AG</a>
                 <div class="flex space-x-6 md:space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors">Home</a>
+                    <a href="indexx.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors">Home</a>
                     <a href="about.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">About</a>
-                    <a href="portfolio.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">Projects</a>
+                    <a href="portfolio.html" class="text-[#FF87AB] font-semibold transition-colors duration-300">Projects</a>
                     <a href="contact.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">Contact Me</a>
                 </div>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section with the new, centered image -->
-    <header id="hero" class="relative">
-        <img src="AYNur Guliyeva (3).png" alt="Aynur Guliyeva" class="w-full max-w-4xl h-auto object-cover px-4">
-        <!-- Overlay for the mouse glow effect -->
-        <div id="mouse-glow-overlay"></div>
+    
+    <header id="hero" class="pt-32 pb-16 text-center">
+        <div id="mouse-glow-overlay" class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-0 transition-opacity duration-300 ease-in-out"></div>
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-5xl md:text-6xl font-bold text-[#333333] mb-4">My Projects</h1>
+            <p class="text-xl text-gray-600">A showcase of my work in computer science and AI.</p>
+        </div>
     </header>
 
-    <!-- New Section to download the CV -->
-    <section id="cv-download" class="py-32 px-6 bg-[#D4C9EE]/30">
-        <div class="container mx-auto text-center max-w-2xl">
-            <h2 class="text-3xl sm:text-4xl font-semibold mb-6 text-[#FF87AB]">Download My Resume</h2>
-            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-                Curious about my experience and skills? You can download my full resume here.
-            </p>
-            <a href="https://drive.google.com/file/d/1BuZ1PlTnrEau3QYzg6pKLag8RvX4aTPR/view?usp=drive_link" download="Aynur_Guliyeva_Resume.pdf" class="inline-block bg-[#FF87AB] text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:bg-[#FFD1DC] transition-colors duration-300">
-                Download CV
+    <main class="container mx-auto max-w-7xl p-6">
+        
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a href="projects pages/project-ai-assistant.html" class="project-card rounded-3xl p-6 shadow-md hover:shadow-xl">
+                <div class="project-image-container mb-4">
+                    <img src="https://placehold.co/600x400/D4C9EE/FF87AB?text=Learning+Assistant" alt="Personalized Learning Assistant" class="w-full h-auto object-cover rounded-2xl project-image">
+                </div>
+                <h3 class="text-2xl font-semibold text-[#FF87AB] mb-2">Personalized Learning Assistant</h3>
+                <p class="text-gray-600 mb-4 text-sm">
+                    An AI-powered assistant that answers questions and summarizes content from PDFs and YouTube videos.
+                </p>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">AI</span>
+                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full">NLP</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Streamlit</span>
+                </div>
             </a>
-        </div>
-    </section>
+            
+            <a href="projects pages/project-hornet-detection.html" class="project-card rounded-3xl p-6 shadow-md hover:shadow-xl">
+                <div class="project-image-container mb-4">
+                    <img src="https://placehold.co/600x400/FFD1DC/333333?text=Hornet+Detection" alt="Asian Hornet Nest Detection System" class="w-full h-auto object-cover rounded-2xl project-image">
+                </div>
+                <h3 class="text-2xl font-semibold text-[#FF87AB] mb-2">Asian Hornet Detection System</h3>
+                <p class="text-gray-600 mb-4 text-sm">
+                    A wildlife AI system that uses computer vision to detect Asian hornets from video data for ecological monitoring.
+                </p>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">YOLO</span>
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">Python</span>
+                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Edge AI</span>
+                </div>
+            </a>
 
-    <!-- New Footer Section -->
-    <footer class="bg-[#D4C9EE] py-16 px-6">
+            <a href="projects pages/project-tomorrowland-bi.html" class="project-card rounded-3xl p-6 shadow-md hover:shadow-xl">
+                <div class="project-image-container mb-4">
+                    <img src="https://placehold.co/600x400/D4C9EE/FF87AB?text=Tomorrowland+BI" alt="Tomorrowland BI Project" class="w-full h-auto object-cover rounded-2xl project-image">
+                </div>
+                <h3 class="text-2xl font-semibold text-[#FF87AB] mb-2">Tomorrowland Business Intelligence</h3>
+                <p class="text-gray-600 mb-4 text-sm h-16"> Created a complete Business Intelligence pipeline
+                    to analyze Tomorrowland festival data and derive key insights.
+                </p>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Qlik Sense</span>
+                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full">BI</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Big Data</span>
+                </div>
+            </a>
+            
+            <a href="projects pages/project-housing-prediction.html" class="project-card rounded-3xl p-6 shadow-md hover:shadow-xl">
+                <div class="project-image-container mb-4">
+                    <img src="https://placehold.co/600x400/FF87AB/D4C9EE?text=Housing+Prediction" alt="Cloud AI Housing Price Prediction" class="w-full h-auto object-cover rounded-2xl project-image">
+                </div>
+                <h3 class="text-2xl font-semibold text-[#FF87AB] mb-2">Cloud Housing Price Prediction</h3>
+                <p class="text-gray-600 mb-4 text-sm">
+                    Developed and deployed a scalable AI regression model to predict housing prices on the cloud.
+                </p>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">Python</span>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">Scikit-learn</span>
+                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">CI/CD</span>
+                </div>
+            </a>
+
+            <a href="projects pages/project-trackmania.html" class="project-card rounded-3xl p-6 shadow-md hover:shadow-xl">
+                <div class="project-image-container mb-4">
+                    <img src="https://placehold.co/600x400/D4C9EE/FF87AB?text=TrackMania+Data" alt="TrackMania Replay Data Analysis" class="w-full h-auto object-cover rounded-2xl project-image">
+                </div>
+                <h3 class="text-2xl font-semibold text-[#FF87AB] mb-2">TrackMania Autonomous Driving Car</h3>
+                <p class="text-gray-600 mb-4 text-sm">
+                     This project uses deep learning to create an autonomous driving system for the Trackmania game.
+                     It employs models to achieve real-time navigation.
+                </p>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Deep Learning</span>
+                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full">Machine Learning</span>
+                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">YOLO</span>
+                </div>
+                
+            </a>
+
+        
+        </section>
+    </main>
+
+    <footer class="bg-[#D4C9EE] py-16 px-6 max-w-7xl mx-auto rounded-3xl mt-24 text-gray-400">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            <!-- Get in touch column -->
             <div>
                 <h3 class="text-3xl font-bold mb-6 text-[#333333]">Get in touch</h3>
                 <div class="space-y-6">
-                    <!-- Address -->
                     <div>
                         <h4 class="font-semibold text-gray-700">ADDRESS</h4>
                         <p class="text-gray-600">Oude Brusselsestraat 50, 2800 Mechelen</p>
                     </div>
-                    <!-- Phone -->
                     <div>
                         <h4 class="font-semibold text-gray-700">PHONE</h4>
                         <p class="text-gray-600">+32 491 10 41 57</p>
                     </div>
-                    <!-- Email -->
                     <div>
                         <h4 class="font-semibold text-gray-700">E-MAIL</h4>
                         <p class="text-gray-600">aynur.guliyeva.12042005@gmail.com</p>
                     </div>
                 </div>
             </div>
-
-            <!-- Quick Links column -->
             <div>
                 <h3 class="text-3xl font-bold mb-6 text-[#333333]">Quick Links</h3>
                 <ul class="space-y-4">
                     <li class="flex items-center space-x-2">
                         <i class="fas fa-home text-[#FF87AB]"></i>
-                        <a href="index.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">HOME</a>
+                        <a href="indexx.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">HOME</a>
                     </li>
                     <li class="flex items-center space-x-2">
                         <i class="fas fa-user text-[#FF87AB]"></i>
@@ -226,7 +284,7 @@
                     </li>
                     <li class="flex items-center space-x-2">
                         <i class="fas fa-briefcase text-[#FF87AB]"></i>
-                        <a href="projects.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">PROJECTS</a>
+                        <a href="portfolio.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">PROJECTS</a>
                     </li>
                 </ul>
             </div>
@@ -236,21 +294,18 @@
         </div>
     </footer>
 
-    <!-- Floating Chat Button -->
-    <button id="chat-toggle" class="fixed bottom-6 right-6 bg-[#FF87AB] text-white p-4 rounded-full shadow-lg hover:bg-[#FFD1DC] transition-colors z-50">
+
+
+<button id="chat-toggle" class="fixed bottom-6 right-6 bg-[#FF87AB] text-white p-4 rounded-full shadow-lg hover:bg-[#FFD1DC] transition-colors z-50">
         💬
     </button>
 
-    <!-- Chatbot Floating Panel -->
     <div id="chatbot-container" class="fixed bottom-20 right-6 w-80 bg-white rounded-2xl shadow-2xl border border-gray-200 hidden z-50 flex flex-col">
-        <!-- Header -->
         <div class="bg-[#FF87AB] text-white p-4 rounded-t-2xl flex justify-between items-center">
             <h3 class="font-semibold">Chat with me!</h3>
             <button id="chat-close" class="text-white hover:text-gray-200">✖</button>
         </div>
-        <!-- Messages -->
         <div id="messages-container" class="flex-1 overflow-y-auto p-4 flex flex-col gap-4">
-            <!-- Initial bot greeting message with avatar -->
             <div class="flex items-start">
                 <img src="https://placehold.co/40x40/D4C9EE/FF87AB?text=Bot" alt="Bot Avatar" class="w-8 h-8 rounded-full mr-3 object-cover">
                 <div class="bot-message p-3 rounded-xl text-gray-800">
@@ -258,7 +313,6 @@
                 </div>
             </div>
         </div>
-        <!-- Quick Questions -->
         <div id="quick-questions-container" class="quick-questions px-3">
             <button class="quick-question-btn" data-topic="Me">About Me</button>
             <button class="quick-question-btn" data-topic="Projects">My Projects</button>
@@ -266,7 +320,6 @@
             <button class="quick-question-btn" data-topic="Fun">Fun Facts</button>
             <button class="quick-question-btn" data-topic="Contact">Contact Info</button>
         </div>
-        <!-- Input -->
         <div class="p-3 border-t flex space-x-2">
             <input type="text" id="user-input" placeholder="Ask me anything..." class="flex-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF87AB]">
             <button id="send-btn" class="p-2 bg-[#FF87AB] text-white rounded-lg hover:bg-[#D4C9EE] disabled:opacity-50" disabled>
@@ -275,28 +328,28 @@
         </div>
     </div>
 
-    <!-- JavaScript for the main page animations and chatbot functionality -->
+
+
+
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', () => {
+        const heroSection = document.getElementById('hero');
+        const glowOverlay = document.getElementById('mouse-glow-overlay');
+        
+        // This is the core logic for the mouse-glow effect
+        heroSection.addEventListener('mousemove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            glowOverlay.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 135, 171, 0.4) 0%, transparent 50%)`;
+            glowOverlay.style.opacity = 1;
+        });
 
-            // Mouse glow effect functionality
-            const heroSection = document.getElementById('hero');
-            const glowOverlay = document.getElementById('mouse-glow-overlay');
-            heroSection.addEventListener('mousemove', (e) => {
-                const rect = heroSection.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                // Set the radial gradient to follow the mouse position
-                glowOverlay.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 135, 171, 0.4) 0%, transparent 50%)`;
-                glowOverlay.style.opacity = 1;
-            });
-            heroSection.addEventListener('mouseleave', () => {
-                // Fade out the glow when the mouse leaves
-                glowOverlay.style.opacity = 0;
-            });
-
-            // Chatbot functionality
+        heroSection.addEventListener('mouseleave', () => {
+            glowOverlay.style.opacity = 0;
+        });
+    // Chatbot functionality
             const chatToggle = document.getElementById("chat-toggle");
             const chatContainer = document.getElementById("chatbot-container");
             const chatClose = document.getElementById("chat-close");
@@ -309,10 +362,10 @@
             // Define the static responses here
             const responses = {
                 'Me': { text: 'Aynur is a passionate Computer Science student building real-world AI solutions. She loves creating things that live on the internet and is always learning new technologies.' },
-                'Projects': { text: 'I have worked on several projects, including a smart irrigation system using IoT sensors and a machine learning model for predicting customer churn. You can see more details on my Projects page!', link: 'projects.html', linkText: 'View Projects' },
-                'Skills': { text: 'My technical skills include Python, JavaScript, and Java. I am proficient in frameworks like TensorFlow and React, and I have experience with cloud platforms like Google Cloud. I am also great at problem-solving and collaboration!' },
-                'Fun': { text: 'When I am not coding, you can find me reading, going out with friends, or trying out new hobbies. I am also a huge fan of romance movies!' },
-                'Contact': { text: 'You can get in touch with me by email, or through my social media profiles on my Contact page.', link: 'contact.html', linkText: 'Get in Touch' }
+                'Projects': { text: 'Aynur has worked on a number of exciting projects, including a personal portfolio website, and more. You can check out her work by clicking the button below.', link: 'projects.html', linkText: 'View Projects' },
+                'Skills': { text: 'Aynur has a strong foundation in a variety of technical skills, including HTML, CSS, JavaScript, and more. She is always expanding her knowledge.' },
+                'Fun': { text: 'When Aynur isn\'t coding, she enjoys [add a fun fact here!].' },
+                'Contact': { text: 'You can get in touch with Aynur via email or connect with her on her social media profiles.', link: 'contact.html', linkText: 'Get in Touch' }
             };
 
             // Function to add a message to the chat container.
@@ -452,6 +505,6 @@
                 chatContainer.classList.add("hidden");
             });
         });
-    </script>
+</script>
 </body>
 </html>

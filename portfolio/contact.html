@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Aynur Guliyeva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<style>
+      body {
+            font-family: 'Poppins', sans-serif;
+        
+        }
+</style>
+<body>
+
+    <!--
+        Navigation Bar Section
+        Fixed at the top with a soft, semi-transparent background.
+        The navigation links change color on hover.
+    -->
+     <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto max-w-7xl p-4 md:px-6 rounded-2xl bg-pink-100 backdrop-blur-md shadow-2xl hover:shadow-3xl transition-shadow duration-300 border-b border-gray-200">
+            <div class="flex justify-between items-center">
+                <a href="indexx.html" class="text-xl font-bold text-[#333333] hover:text-[#FF87AB] transition-colors duration-300">AG</a>
+                <div class="flex space-x-6 md:space-x-8">
+                    <a href="indexx.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">About</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">Projects</a>
+                    <a href="contact.html" class="text-[#FF87AB] font-semibold hover:text-[#FF87AB] transition-colors duration-300">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--
+        Contact Section
+        A simple contact section with a call to action and social media links.
+        The "Say Hello" button uses a vibrant pink for contrast.
+    -->
+    <section id="contact" class="py-20 px-6 min-h-screen flex items-center justify-center">
+        <div class="container mx-auto max-w-2xl text-center">
+            <h2 class="text-3xl sm:text-4xl font-semibold mb-4 text-[#FF87AB] fade-in">Let's Connect!</h2>
+            <p class="text-gray-700 mb-8 max-w-lg mx-auto leading-relaxed fade-in">
+                I'm always excited to collaborate on new and interesting projects. Feel free to reach out via email or connect with me on social media.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 fade-in">
+                <a href="mailto:your.email@example.com" class="bg-[#FF87AB] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[#FFD1DC] transition-colors">
+                    Say Hello
+                </a>
+                <!-- Social media links (replace with your own) -->
+                <div class="flex space-x-4 text-gray-600">
+                     <a href="https://github.com/aynurguliyeva" target="_blank" rel="noopener noreferrer" class="hover:text-[#FF87AB] transition-colors">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.83 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.474-1.11-1.474-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.528 2.341 1.087 2.91.832.092-.647.35-1.087.636-1.334-2.22-.253-4.555-1.11-4.555-4.927 0-1.089.39-1.979 1.029-2.677-.103-.253-.446-1.27.098-2.659 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.701.114 2.516.331 1.909-1.296 2.747-1.027 2.747-1.027.546 1.39.202 2.406.1 2.659.64.698 1.028 1.587 1.028 2.677 0 3.827-2.338 4.673-4.564 4.92-.357.309-.676.842-.676 1.637 0 1.18.01 2.123.01 2.414 0 .266.18.59.687.483C21.13 20.203 24 16.447 24 12.017 24 6.484 19.522 2 14 2h-2z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/aynur-guliyeva/" target="_blank" rel="noopener noreferrer" class="hover:text-[#FF87AB] transition-colors">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9h4v12H4V9z" /><circle cx="6" cy="6" r="2" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+        Footer Section
+        A simple footer with copyright information.
+    -->
+    <footer class="py-8 text-center text-gray-500">
+        <p>&copy; <span id="current-year"></span> Aynur Guliyeva. All Rights Reserved.</p>
+    </footer>
+
+    <!--
+        JavaScript Section
+        This script handles smooth scrolling for navigation and updates the footer year.
+    -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update the current year in the footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

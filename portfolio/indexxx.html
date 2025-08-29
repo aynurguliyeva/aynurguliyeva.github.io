@@ -1,40 +1,129 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Aynur Guliyeva</title>
-    <!-- Poppins font from Google Fonts -->
+    <title>Aynur's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons in the footer -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <!-- Phosphor Icons for the chat buttons -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.0"></script>
-    <!-- Tailwind CSS from CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
     <style>
-        /* General styles to match the new hero section aesthetic */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #F5F5F5;
+        /* Define custom Tailwind colors and fonts for the light theme */
+        :root {
+            --primary-text: #333333;
+            --secondary-text: #666666;
+            --background-light: #FDFBFF;
+            --card-bg: #FFFFFF;
+            --button-pink: #FF87AB;
+            --button-hover: #FFD1DC;
+            --nav-bg: #E6E6FA; /* A light, clean color for the nav bar */
         }
 
-        /* --- New Hero Section styles --- */
-        #hero {
-            background-color: #FFFFFF; /* White background to match the PNG */
+        body {
+            background-color: var(--background-light);
+            color: var(--primary-text);
+            font-family: 'Poppins', sans-serif;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            position: relative; /* Added to position the glow overlay correctly */
-            overflow: hidden; /* Added to contain the glow within the section */
+            position: relative; /* Set position to relative for the glow overlay to work correctly */
+        }
+        
+        /* Custom styles for the centered profile card */
+        .profile-card {
+             background-color: rgba(241, 160, 214, 0.4); /* White with 40% transparency */
+    backdrop-filter: blur(15px); /* Apply a blur effect to the background */
+    -webkit-backdrop-filter: blur(15px); /* For Safari support */
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    max-width: 500px;
+            
+        }
+        
+        .profile-image-container {
+            /* Increased size for a bigger image */
+            width: 256px;
+            height: 256px;
+            overflow: hidden;
+            border-radius: 10px; /* Rounded corners for the container */
+            margin: 0 auto;
+            
+
         }
 
-        /* Custom shadow for the navbar hover effect */
-        .shadow-3xl {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1.2rem; /* Rounded corners for the image itself */
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* Glow effect on hover */
+        .profile-image-container:hover .profile-image {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px 5px var(--button-pink), 0 0 10px 2px var(--button-hover);
+        }
+        
+        /* Cursive font style for the name */
+        .cursive-name {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* Hover effect for buttons */
+        .main-button {
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .main-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Styling for the vertical navigation bar */
+        .side-nav {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--nav-bg);
+            border-radius: 1rem 0 0 1rem;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        .nav-item {
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-item:hover {
+            background-color: rgba(255, 135, 171, 0.2); /* Semi-transparent pink on hover */
+        }
+        
+        /* A simple line to indicate the active page, matching the screenshot */
+        .nav-item.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--button-pink);
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 640px) {
+            .profile-card {
+                margin: 1rem;
+                padding-bottom: 2rem;
+            }
+            .side-nav {
+                right: 0.5rem;
+            }
         }
 
         /* --- Chatbot-specific styles --- */
@@ -50,7 +139,9 @@
             transform-origin: bottom right;
         }
 
+        /* The corrected hidden state for the chatbot container */
         #chatbot-container.hidden {
+            display: none;
             opacity: 0;
             transform: scale(0.5);
             pointer-events: none;
@@ -137,45 +228,66 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* New CSS for the mouse glow effect */
+        /* New CSS for the mouse glow effect, positioned to cover the entire page */
         #mouse-glow-overlay {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Allows mouse events to pass through to the image */
+            pointer-events: none; /* Allows mouse events to pass through to the content */
             transition: opacity 0.3s ease-in-out;
             opacity: 0;
+            z-index: -1; /* Position it behind the main content */
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900 font-inter">
 
-    <!-- Navigation Bar - Now with a light pink background -->
-    <nav id="navbar" class="fixed top-3 left-0 w-full z-50 transition-all duration-300 ease-in-out">
-        <div class="container mx-auto max-w-7xl p-4 md:px-6 rounded-full bg-pink-100 backdrop-blur-md shadow-2xl hover:shadow-3xl transition-shadow duration-300 border-b border-gray-200">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-xl font-bold text-[#333333] hover:text-[#FF87AB] transition-colors duration-300">AG</a>
-                <div class="flex space-x-6 md:space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">About</a>
-                    <a href="portfolio.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">Projects</a>
-                    <a href="contact.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">Contact Me</a>
+    <div class="fixed top-8 left-8 text-2xl font-bold bg-white p-2 rounded-full shadow-lg z-20">
+        AG
+    </div>
+
+    <div id="mouse-glow-overlay"></div>
+
+    <main id="hero" class="flex flex-col items-center justify-center p-6 w-full max-w-lg mx-auto">
+        
+        <div id="profile-card" class="profile-card relative w-full p-6 text-center">
+            
+            <div class="profile-image-container mb-6">
+                <img src="imageMus.jpeg" alt="Aynur Guliyeva" class="profile-image shadow-xl transition-all duration-500">
+            </div>
+
+            <div class="px-4">
+                <h1 class="cursive-name text-7xl font-light text-pink-400 leading-none absolute top-[52%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">Aynur</h1>
+                <p class="text-sm text-gray-600">Hi, I'm Aynur Guliyeva.</p>
+                <p class="text-sm text-gray-600 mb-6">A Computer Science Student and AI Developer</p>
+            
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-300 flex items-center justify-center text-gray-700">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-300 flex items-center justify-center text-gray-700">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-300 flex items-center justify-center text-gray-700">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-300 flex items-center justify-center text-gray-700">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
             </div>
+
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="#" class="main-button bg-white border border-gray-300 text-gray-800 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100">Start a Project</a>
+                <a href="#" class="main-button bg-white border border-gray-300 text-gray-800 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100">View my Works</a>
+            </div>
         </div>
-    </nav>
+    </main>
 
-    <!-- Hero Section with the new, centered image -->
-    <header id="hero" class="relative">
-        <img src="AYNur Guliyeva (3).png" alt="Aynur Guliyeva" class="w-full max-w-4xl h-auto object-cover px-4">
-        <!-- Overlay for the mouse glow effect -->
-        <div id="mouse-glow-overlay"></div>
-    </header>
-
-    <!-- New Section to download the CV -->
-    <section id="cv-download" class="py-32 px-6 bg-[#D4C9EE]/30">
+     <!-- New Section to download the CV -->
+    <section id="cv-download" class="w-full max-w-2xl px-6 py-12 text-center mt-16">
         <div class="container mx-auto text-center max-w-2xl">
             <h2 class="text-3xl sm:text-4xl font-semibold mb-6 text-[#FF87AB]">Download My Resume</h2>
             <p class="text-lg text-gray-700 mb-8 leading-relaxed">
@@ -183,74 +295,45 @@
             </p>
             <a href="https://drive.google.com/file/d/1BuZ1PlTnrEau3QYzg6pKLag8RvX4aTPR/view?usp=drive_link" download="Aynur_Guliyeva_Resume.pdf" class="inline-block bg-[#FF87AB] text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:bg-[#FFD1DC] transition-colors duration-300">
                 Download CV
+
+                <i class="fa-solid fa-download"></i>
             </a>
         </div>
     </section>
 
-    <!-- New Footer Section -->
-    <footer class="bg-[#D4C9EE] py-16 px-6">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            <!-- Get in touch column -->
-            <div>
-                <h3 class="text-3xl font-bold mb-6 text-[#333333]">Get in touch</h3>
-                <div class="space-y-6">
-                    <!-- Address -->
-                    <div>
-                        <h4 class="font-semibold text-gray-700">ADDRESS</h4>
-                        <p class="text-gray-600">Oude Brusselsestraat 50, 2800 Mechelen</p>
-                    </div>
-                    <!-- Phone -->
-                    <div>
-                        <h4 class="font-semibold text-gray-700">PHONE</h4>
-                        <p class="text-gray-600">+32 491 10 41 57</p>
-                    </div>
-                    <!-- Email -->
-                    <div>
-                        <h4 class="font-semibold text-gray-700">E-MAIL</h4>
-                        <p class="text-gray-600">aynur.guliyeva.12042005@gmail.com</p>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Quick Links column -->
-            <div>
-                <h3 class="text-3xl font-bold mb-6 text-[#333333]">Quick Links</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-center space-x-2">
-                        <i class="fas fa-home text-[#FF87AB]"></i>
-                        <a href="index.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">HOME</a>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                        <i class="fas fa-user text-[#FF87AB]"></i>
-                        <a href="about.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">ABOUT ME</a>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                        <i class="fas fa-briefcase text-[#FF87AB]"></i>
-                        <a href="projects.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">PROJECTS</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="text-center text-gray-500 mt-12">
-            <p>&copy; <span id="current-year"></span> Aynur Guliyeva. All Rights Reserved.</p>
+    <nav class="side-nav p-2">
+        <a href="#" class="nav-item active block text-center text-gray-700 text-xl">
+            <i class="fas fa-home"></i>
+        </a>
+        <a href="#" class="nav-item block text-center text-gray-700 text-xl">
+            <i class="fas fa-user"></i>
+        </a>
+        <a href="#" class="nav-item block text-center text-gray-700 text-xl">
+            <i class="fas fa-briefcase"></i>
+        </a>
+        <a href="#" class="nav-item block text-center text-gray-700 text-xl">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </nav>
+
+    <footer class="w-full text-center py-8 mt-16 text-gray-500">
+        <p class="mb-2">© 2025 Aynur Guliyeva. All rights reserved.</p>
+        <div class="flex justify-center space-x-4">
+            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors duration-300">Privacy Policy</a>
+            <a href="#" class="text-gray-500 hover:text-gray-700 transition-colors duration-300">Terms of Use</a>
         </div>
     </footer>
-
-    <!-- Floating Chat Button -->
     <button id="chat-toggle" class="fixed bottom-6 right-6 bg-[#FF87AB] text-white p-4 rounded-full shadow-lg hover:bg-[#FFD1DC] transition-colors z-50">
         💬
     </button>
 
-    <!-- Chatbot Floating Panel -->
     <div id="chatbot-container" class="fixed bottom-20 right-6 w-80 bg-white rounded-2xl shadow-2xl border border-gray-200 hidden z-50 flex flex-col">
-        <!-- Header -->
         <div class="bg-[#FF87AB] text-white p-4 rounded-t-2xl flex justify-between items-center">
             <h3 class="font-semibold">Chat with me!</h3>
             <button id="chat-close" class="text-white hover:text-gray-200">✖</button>
         </div>
-        <!-- Messages -->
         <div id="messages-container" class="flex-1 overflow-y-auto p-4 flex flex-col gap-4">
-            <!-- Initial bot greeting message with avatar -->
             <div class="flex items-start">
                 <img src="https://placehold.co/40x40/D4C9EE/FF87AB?text=Bot" alt="Bot Avatar" class="w-8 h-8 rounded-full mr-3 object-cover">
                 <div class="bot-message p-3 rounded-xl text-gray-800">
@@ -258,7 +341,7 @@
                 </div>
             </div>
         </div>
-        <!-- Quick Questions -->
+        
         <div id="quick-questions-container" class="quick-questions px-3">
             <button class="quick-question-btn" data-topic="Me">About Me</button>
             <button class="quick-question-btn" data-topic="Projects">My Projects</button>
@@ -266,7 +349,6 @@
             <button class="quick-question-btn" data-topic="Fun">Fun Facts</button>
             <button class="quick-question-btn" data-topic="Contact">Contact Info</button>
         </div>
-        <!-- Input -->
         <div class="p-3 border-t flex space-x-2">
             <input type="text" id="user-input" placeholder="Ask me anything..." class="flex-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF87AB]">
             <button id="send-btn" class="p-2 bg-[#FF87AB] text-white rounded-lg hover:bg-[#D4C9EE] disabled:opacity-50" disabled>
@@ -275,25 +357,27 @@
         </div>
     </div>
 
-    <!-- JavaScript for the main page animations and chatbot functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('current-year').textContent = new Date().getFullYear();
 
             // Mouse glow effect functionality
             const heroSection = document.getElementById('hero');
             const glowOverlay = document.getElementById('mouse-glow-overlay');
-            heroSection.addEventListener('mousemove', (e) => {
-                const rect = heroSection.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                // Set the radial gradient to follow the mouse position
-                glowOverlay.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 135, 171, 0.4) 0%, transparent 50%)`;
-                glowOverlay.style.opacity = 1;
+            const body = document.body;
+
+            body.addEventListener('mouseenter', () => {
+                glowOverlay.style.opacity = '1';
             });
-            heroSection.addEventListener('mouseleave', () => {
-                // Fade out the glow when the mouse leaves
-                glowOverlay.style.opacity = 0;
+
+            body.addEventListener('mouseleave', () => {
+                glowOverlay.style.opacity = '0';
+            });
+            
+            // This event listener has been corrected to track mouse movement on the whole body
+            body.addEventListener('mousemove', (e) => {
+                const x = e.clientX;
+                const y = e.clientY;
+                glowOverlay.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 135, 171, 0.4) 0%, rgba(255, 135, 171, 0) 60%)`;
             });
 
             // Chatbot functionality
