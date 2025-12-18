@@ -242,7 +242,7 @@
                     <a href="index.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors">Home</a>
                     <a href="about.html" class="text-[#FF87AB] font-semibold transition-colors duration-300">About</a>
                     <a href="portfolio.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">Projects</a>
-                    <a href="internship.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">Internshi
+                    <a href="internship.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">Internship
                     <a href="contact.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">Contact Me</a>
                 </div>
             </div>
@@ -361,82 +361,250 @@
 
     ---
 
-   <section id="skills-section" class="py-24 px-6 max-w-7xl mx-auto text-center relative overflow-hidden bg-white rounded-3xl">
-        <div id="mouse-glow-overlay-skills" class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-0 mouse-glow-overlay"></div>
-        
-        <div class="relative z-20"> 
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">My Skills & Technologies</h2>
-            <p class="text-gray-600 mb-12">Swipe to explore my full tech stack.</p>
+<section id="skills-section"
+  class="py-24 px-6 max-w-7xl mx-auto text-center relative overflow-hidden bg-white rounded-3xl">
+  
+  <div id="mouse-glow-overlay-skills"
+       class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-0 mouse-glow-overlay"></div>
 
-            <div class="relative">
-                <div class="flex flex-nowrap overflow-x-auto gap-8 swipable-container py-4">
-                    <div class="flex-shrink-0 w-48 h-48 bg-gray-800 rounded-2xl flex flex-col items-center justify-center p-4 shadow-lg">
-                        <img src="https://simpleicons.org/icons/opencv.svg" alt="YOLO Icon" class="w-24 h-24 mb-2 filter invert">
-                        <p class="text-white font-medium text-sm text-center">YOLO</p>
-                    </div>
-                    <div class="flex-shrink-0 w-48 h-48 bg-gray-800 rounded-2xl flex flex-col items-center justify-center p-4 shadow-lg">
-                        <img src="https://simpleicons.org/icons/openai.svg" alt="AI Icon" class="w-24 h-24 mb-2 filter invert">
-                        <p class="text-white font-medium text-sm text-center">Artificial Intelligence</p>
-                    </div>
-                    <div class="flex-shrink-0 w-48 h-48 bg-gray-800 rounded-2xl flex flex-col items-center justify-center p-4 shadow-lg">
-                        <img src="https://simpleicons.org/icons/keras.svg" alt="CNN Icon" class="w-24 h-24 mb-2 filter invert">
-                        <p class="text-white font-medium text-sm text-center">Convolutional Neural Networks</p>
-                    </div>
-                    <div class="flex-shrink-0 w-48 h-48 bg-gray-800 rounded-2xl flex flex-col items-center justify-center p-4 shadow-lg">
-                        <img src="https://simpleicons.org/icons/scikitlearn.svg" alt="Tokenization Icon" class="w-24 h-24 mb-2 filter invert">
-                        <p class="text-white font-medium text-sm text-center">Tokenization</p>
-                    </div>
+  <div class="relative z-20">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">My Skills & Technologies</h2>
+    <p class="text-gray-600 mb-12 max-w-3xl mx-auto">
+      A focused toolkit I use to build AI solutions, data pipelines, and modern web apps.
+    </p>
 
-                    <div class="flex-shrink-0 w-48 h-48 bg-gray-800 rounded-2xl flex flex-col items-center justify-center p-4 shadow-lg">
-                        <img src="https://simpleicons.org/icons/qlik.svg" alt="Qlik Sense Icon" class="w-24 h-24 mb-2 filter invert">
-                        <p class="text-white font-medium text-sm text-center">Qlik Sense / QlikView</p>
-                    </div>
-                    <div class="flex-shrink-0 w-48 h-48 bg-gray-800 rounded-2xl flex flex-col items-center justify-center p-4 shadow-lg">
-                        <img src="https://simpleicons.org/icons/apachespark.svg" alt="Big Data Icon" class="w-24 h-24 mb-2 filter invert">
-                        <p class="text-white font-medium text-sm text-center">Big Data</p>
-                    </div>
-            
-                    <div class="flex-shrink-0 w-48 h-48 bg-gray-800 rounded-2xl flex flex-col items-center justify-center p-4 shadow-lg">
-                        <img src="https://simpleicons.org/icons/react.svg" alt="React.js Icon" class="w-24 h-24 mb-2 filter invert">
-                        <p class="text-white font-medium text-sm text-center">React.js</p>
-                    </div>
-        
-                    <div class="flex-shrink-0 w-48 h-48 bg-gray-800 rounded-2xl flex flex-col items-center justify-center p-4 shadow-lg">
-                        <img src="https://simpleicons.org/icons/python.svg" alt="Python Icon" class="w-24 h-24 mb-2 filter invert">
-                        <p class="text-white font-medium text-sm text-center">Python</p>
-                    </div>
+    <!-- Skills grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
 
-                </div>
-            </div>
+      <!-- AI / ML -->
+      <div class="rounded-3xl p-8 bg-[#0d0d18] text-white shadow-lg border border-white/10
+                  transition-transform duration-300 hover:scale-[1.02]">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FF87AB] to-[#D4C9EE]
+                      flex items-center justify-center shadow-md">
+            <i class="fas fa-brain text-[#0d0d18]"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">AI / Machine Learning</h3>
+            <p class="text-sm text-gray-300">Models, evaluation, and practical ML workflows.</p>
+          </div>
         </div>
-    </section>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">Python</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">scikit-learn</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">Keras / CNNs</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">YOLO</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">NLP / Tokenization</span>
+        </div>
+      </div>
+
+      <!-- Data / Analytics -->
+      <div class="rounded-3xl p-8 bg-[#0d0d18] text-white shadow-lg border border-white/10
+                  transition-transform duration-300 hover:scale-[1.02]">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#D4C9EE] to-[#FF87AB]
+                      flex items-center justify-center shadow-md">
+            <i class="fas fa-chart-bar text-[#0d0d18]"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Data & Analytics</h3>
+            <p class="text-sm text-gray-300">Working with datasets, insights, and dashboards.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">Big Data</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">Apache Spark</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">Qlik Sense / QlikView</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">Data Cleaning</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">Feature Engineering</span>
+        </div>
+      </div>
+
+      <!-- Web / Frontend -->
+      <div class="rounded-3xl p-8 bg-[#0d0d18] text-white shadow-lg border border-white/10
+                  transition-transform duration-300 hover:scale-[1.02]">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FF87AB] to-[#D4C9EE]
+                      flex items-center justify-center shadow-md">
+            <i class="fas fa-code text-[#0d0d18]"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Web Development</h3>
+            <p class="text-sm text-gray-300">Building modern, responsive interfaces.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">HTML</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">CSS</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">JavaScript</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">React.js</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">Tailwind</span>
+        </div>
+      </div>
+
+      <!-- Tools / Workflow -->
+      <div class="rounded-3xl p-8 bg-[#0d0d18] text-white shadow-lg border border-white/10
+                  transition-transform duration-300 hover:scale-[1.02]">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#D4C9EE] to-[#FF87AB]
+                      flex items-center justify-center shadow-md">
+            <i class="fas fa-tools text-[#0d0d18]"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Tools & Workflow</h3>
+            <p class="text-sm text-gray-300">How I build, version, and ship projects.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">Git / GitHub</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">VS Code</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">APIs</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">Debugging</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm">Documentation</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Optional CTA -->
+    <div class="mt-12">
+      <a href="portfolio.html"
+         class="inline-block px-8 py-3 rounded-full bg-[#FF87AB] text-white font-semibold shadow-md
+                hover:bg-[#D4C9EE] hover:text-[#000000] transition-colors duration-300">
+        See my projects
+      </a>
+    </div>
+  </div>
+</section>
 
     ---
 
-    <section id="licenses-section" class="py-24 px-6 max-w-7xl mx-auto text-center relative overflow-hidden bg-[#1e1e2d] rounded-3xl text-white">
-        <div id="mouse-glow-overlay-certs" class="absolute inset-0 pointer-events-none opacity-0 mouse-glow-overlay"></div>
-        <div class="relative z-20"> 
-            <h2 class="text-4xl md:text-5xl font-bold mb-4">Licenses & Certifications</h2>
-            <p class="text-gray-400 mb-12">Verifiable proof of my expertise and commitment to growth.</p>
+   <section id="licenses-section"
+  class="py-24 px-6 max-w-7xl mx-auto text-center relative overflow-hidden bg-[#1e1e2d] rounded-3xl text-white">
 
-            <div class="bg-[#0d0d18] rounded-3xl p-8 max-w-2xl mx-auto shadow-lg relative overflow-hidden
-                        transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                <div class="absolute inset-0 bg-gradient-to-br from-[#FF87AB]/20 via-transparent to-[#D4C9EE]/20 opacity-30 pointer-events-none"></div>
-                <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8 text-left">
-                    <div class="flex-shrink-0">
-                        <img src="udemy.jpg" alt="Udemy Certificate - Advanced React" class="w-55 h-48 object-cover rounded-lg shadow-xl">
-                    </div>
-                    <div class="flex-grow space-y-4">
-                        <h3 class="text-xl md:text-2xl font-bold text-white">Advanced React: Design System, Design Patterns, Performance</h3>
-                        <p class="text-gray-400">Issued by: Udemy</p>
-                        <a href="https://www.udemy.com/certificate/UC-40d61f55-7818-4618-8ee2-f9153ab5e090/" class="inline-block px-6 py-2 bg-[#FF87AB] text-white font-semibold rounded-full shadow-md hover:bg-[#D4C9EE] hover:text-[#000000] transition-colors duration-300">
-                            Show Credential
-                        </a>
-                    </div>
-                </div>
-            </div>
+  <div id="mouse-glow-overlay-certs"
+       class="absolute inset-0 pointer-events-none opacity-0 mouse-glow-overlay"></div>
+
+  <div class="relative z-20">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Licenses & Certifications</h2>
+    <p class="text-gray-400 mb-12">
+      Verifiable proof of my expertise and commitment to continuous learning.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <!-- Udemy -->
+      <div class="bg-[#0d0d18] rounded-3xl p-6 shadow-lg relative overflow-hidden
+                  transition-transform duration-300 hover:scale-[1.02] border border-white/10">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#FF87AB]/20 via-transparent to-[#D4C9EE]/20 opacity-30"></div>
+
+        <div class="relative z-10 space-y-4 text-left">
+          <div class="rounded-2xl overflow-hidden border border-white/10 bg-white">
+            <img src="udemy.jpg"
+                 alt="Udemy Certificate"
+                 class="w-full h-32 object-cover" />
+          </div>
+
+          <h3 class="text-lg font-bold">
+            Advanced React: Design Systems, Patterns & Performance
+          </h3>
+
+          <p class="text-sm text-gray-400">Issued by Udemy</p>
+
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">React</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Design Systems</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Performance</span>
+          </div>
+
+          <a href="https://www.udemy.com/certificate/UC-40d61f55-7818-4618-8ee2-f9153ab5e090/"
+             target="_blank"
+             class="inline-block mt-3 px-5 py-2 bg-[#FF87AB] text-white font-semibold rounded-full
+                    hover:bg-[#D4C9EE] hover:text-black transition">
+            Show credential
+          </a>
         </div>
-    </section>
+      </div>
+
+      <!-- AWS Data Engineering -->
+      <div class="bg-[#0d0d18] rounded-3xl p-6 shadow-lg relative overflow-hidden
+                  transition-transform duration-300 hover:scale-[1.02] border border-white/10">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#FF87AB]/20 via-transparent to-[#D4C9EE]/20 opacity-30"></div>
+
+        <div class="relative z-10 space-y-4 text-left">
+          <div class="rounded-2xl overflow-hidden border border-white/10 bg-white">
+            <img src="icons/aws data engineering foundations.png"
+                 alt="AWS Data Engineering Certificate"
+                 class="w-full h-32 object-cover" />
+          </div>
+
+          <h3 class="text-lg font-bold">
+            Data Engineering on AWS – Foundations
+          </h3>
+
+          <p class="text-sm text-gray-400">
+            AWS Training & Certification · Oct 2025
+          </p>
+
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">AWS</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Data Engineering</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Pipelines</span>
+          </div>
+
+          <a href="https://drive.google.com/file/d/185WVsXEEsfJmsiEYvTlM2zN40nLAyXIR/view?usp=sharing"
+             target="_blank"
+             class="inline-block mt-3 px-5 py-2 bg-[#FF87AB] text-white font-semibold rounded-full
+                    hover:bg-[#D4C9EE] hover:text-black transition">
+            Show credential
+          </a>
+        </div>
+      </div>
+
+      <!-- AWS Generative AI -->
+      <div class="bg-[#0d0d18] rounded-3xl p-6 shadow-lg relative overflow-hidden
+                  transition-transform duration-300 hover:scale-[1.02] border border-white/10">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#FF87AB]/20 via-transparent to-[#D4C9EE]/20 opacity-30"></div>
+
+        <div class="relative z-10 space-y-4 text-left">
+          <div class="rounded-2xl overflow-hidden border border-white/10 bg-white">
+            <img src="icons/aws gen ai.png"
+                 alt="AWS Generative AI Certificate"
+                 class="w-full h-32 object-cover" />
+          </div>
+
+          <h3 class="text-lg font-bold">
+            Chalk Talks: Generative AI on AWS
+          </h3>
+
+          <p class="text-sm text-gray-400">
+            AWS Training & Certification · Oct 2025
+          </p>
+
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Generative AI</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">LLMs</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">AWS</span>
+          </div>
+
+          <a href="https://drive.google.com/file/d/1vbVyJZIqCfkiLuTIg884mzsqor1Wiq2V/view?usp=sharing"
+             target="_blank"
+             class="inline-block mt-3 px-5 py-2 bg-[#FF87AB] text-white font-semibold rounded-full
+                    hover:bg-[#D4C9EE] hover:text-black transition">
+            Show credential
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
 <footer class="bg-[#D4C9EE] py-16 px-6 max-w-7xl mx-auto rounded-3xl mt-24 text-gray-400">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -470,8 +638,12 @@
                         <a href="about.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">ABOUT ME</a>
                     </li>
                     <li class="flex items-center space-x-2">
-                        <i class="fas fa-briefcase text-[#FF87AB]"></i>
+                        <i class="fas fa-folder-open  text-[#FF87AB]"></i>
                         <a href="portfolio.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">PROJECTS</a>
+                    </li>
+                      <li class="flex items-center space-x-2">
+                      <i class="fas fa-briefcase text-[#FF87AB]"></i>
+                        <a href="internship.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300">INTERNSHIP</a>
                     </li>
                 </ul>
             </div>
