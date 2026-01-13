@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internship Details — Aynur Guliyeva</title>
+
+  <meta name="description" content="Full case study: AI-driven anomaly detection in pension data — AWS SageMaker pipelines, unsupervised ensembles, supervised refinement, and human-in-the-loop retraining." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.0"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .glass {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .soft-shadow { box-shadow: 0 15px 45px rgba(0,0,0,0.25); }
+    .muted { color: rgba(255,255,255,0.72); }
+    .muted2 { color: rgba(255,255,255,0.55); }
+    .hr { border-top: 1px solid rgba(255,255,255,0.10); }
+    .kbd {
+      font-size: 12px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.78);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .step-number {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body class="bg-[#0B0F19] text-white selection:bg-indigo-500/30 selection:text-white">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-[#0B0F19]/80 backdrop-blur border-b border-white/10">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto max-w-7xl p-4 md:px-6 rounded-2xl bg-pink-100 backdrop-blur-md shadow-2xl hover:shadow-3xl transition-shadow duration-300 border-b border-gray-200">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold text-[#333333] hover:text-[#FF87AB] transition-colors duration-300"  target="_blank" rel="noopener noreferrer">AG</a>
+                <div class="flex space-x-6 md:space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300"  target="_blank" rel="noopener noreferrer">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300"  target="_blank" rel="noopener noreferrer">About</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300" target="_blank" rel="noopener noreferrer">Projects</a>
+                    <a href="internship.html" class="text-[#FF87AB] font-semibold hover:text-[#FF87AB] transition-colors" target="_blank" rel="noopener noreferrer">Internship</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-[#FF87AB] transition-colors duration-300" target="_blank" rel="noopener noreferrer">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+  </header>
+
+  <!-- Back to Summary Button -->
+  <div class="max-w-6xl mx-auto px-5 pt-24 pb-6">
+    <a href="internship.html" 
+       class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 border border-white/10 hover:bg-white/15 transition"  target="_blank" rel="noopener noreferrer">
+      <i class="fas fa-arrow-left"></i>
+      <span>Back to Summary</span>
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute -top-40 -left-40 w-[520px] h-[520px] bg-indigo-600/25 blur-[120px] rounded-full"></div>
+      <div class="absolute top-10 -right-40 w-[520px] h-[520px] bg-fuchsia-600/20 blur-[120px] rounded-full"></div>
+      <div class="absolute bottom-[-140px] left-1/2 -translate-x-1/2 w-[720px] h-[420px] bg-sky-500/10 blur-[120px] rounded-full"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-5 py-10">
+      <div class="grid md:grid-cols-12 gap-8 items-center">
+        <!-- text -->
+        <div class="md:col-span-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm text-white/80">
+            <i class="fas fa-briefcase"></i>
+            <span>Full Technical Case Study • AI/ML Internship</span>
+          </div>
+
+          <h1 class="mt-5 text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
+            Complete Technical Breakdown:<br>
+            <span class="gradient-text">PoC Anomaly Detection in Pension Data</span>
+          </h1>
+
+          <p class="mt-4 text-lg muted leading-relaxed max-w-3xl">
+            This document details the complete methodology, architecture, and implementation of the 
+            anomaly detection system developed during my internship at Pension Architects. 
+            From data preprocessing to production deployment on AWS SageMaker.
+          </p>
+
+          <!-- quick facts -->
+          <div class="mt-8 grid sm:grid-cols-3 gap-3">
+            <div class="glass rounded-2xl p-4">
+              <p class="text-xs text-white/60">Timeline</p>
+              <p class="mt-1 font-semibold">Sep 2025 — Dec 2025</p>
+            </div>
+            <div class="glass rounded-2xl p-4">
+              <p class="text-xs text-white/60">Role</p>
+              <p class="mt-1 font-semibold">AI/ML Engineering Intern</p>
+            </div>
+            <div class="glass rounded-2xl p-4">
+              <p class="text-xs text-white/60">Status</p>
+              <p class="mt-1 font-semibold">Proof of Concept Delivered</p>
+            </div>
+          </div>
+
+          <!-- key skills badges -->
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="kbd"><i class="fas fa-database"></i> Data Pipeline Design</span>
+            <span class="kbd"><i class="fas fa-brain"></i> Ensemble ML Models</span>
+            <span class="kbd"><i class="fas fa-cloud-upload-alt"></i> AWS SageMaker</span>
+            <span class="kbd"><i class="fas fa-users-cog"></i> Human-in-the-Loop</span>
+            <span class="kbd"><i class="fas fa-chart-line"></i> MLOps Automation</span>
+          </div>
+        </div>
+
+        <!-- visual card -->
+        <div class="md:col-span-4">
+          <div class="glass rounded-3xl p-6 border border-white/10 soft-shadow">
+            <div class="text-center mb-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs">
+                <i class="fas fa-lock"></i>
+                <span>Non-Confidential Version</span>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-indigo-500/20 to-fuchsia-500/20 flex items-center justify-center">
+                  <i class="fas fa-file-alt text-indigo-300"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold">Document Type</p>
+                  <p class="text-xs muted2">Technical Case Study</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-indigo-500/20 to-fuchsia-500/20 flex items-center justify-center">
+                  <i class="fas fa-clock text-indigo-300"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold">Reading Time</p>
+                  <p class="text-xs muted2">~10-15 minutes</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-6 pt-4 border-t border-white/10">
+              <p class="text-xs text-white/60 mb-2">Quick Navigation</p>
+              <div class="flex flex-wrap gap-2">
+                <a href="#problem" class="text-xs px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 transition">Problem</a>
+                <a href="#architecture" class="text-xs px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 transition">Architecture</a>
+                <a href="#implementation" class="text-xs px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 transition">Implementation</a>
+                <a href="#results" class="text-xs px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 transition">Results</a>
+                <a href="#documents" class="text-xs px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 transition">Documents</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STICKY SUBNAV -->
+    <div class="sticky top-[72px] z-40 pb-4 mt-8">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="glass rounded-2xl px-4 py-3 flex flex-wrap gap-2 text-sm text-white/70 border border-white/10">
+          <a class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition" href="#problem">Problem Statement</a>
+          <a class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition" href="#methodology">Methodology</a>
+          <a class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition" href="#architecture">Architecture</a>
+          <a class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition" href="#implementation">Implementation</a>
+          <a class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition" href="#aws">AWS Pipeline</a>
+          <a class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition" href="#hitl">HITL System</a>
+          <a class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition" href="#results">Results</a>
+          <a class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition" href="#documents">Documents</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-5 pb-16 md:pb-24">
+
+    <!-- PROBLEM STATEMENT -->
+    <section id="problem" class="pt-12 md:pt-16">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-number">1</div>
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Problem Statement & Context</h2>
+      </div>
+      <div class="mt-3 h-1 w-48 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500"></div>
+
+      <div class="mt-6 glass rounded-3xl p-8 border border-white/10">
+        <h3 class="text-xl font-bold mb-4">The Challenge: Manual Validation at Scale</h3>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h4 class="font-semibold text-lg mb-3 text-indigo-300">Context</h4>
+            <p class="muted">
+              Pension Architects processes calculations for multiple pension funds (PF1-PF4), 
+              each with thousands of policies. Each policy undergoes annual calculations for:
+            </p>
+            <ul class="mt-3 space-y-2 text-sm muted list-disc list-inside">
+              <li>Contributions and interest accrual</li>
+              <li>Reserve calculations</li>
+              <li>Eligibility rule applications</li>
+              <li>Regulatory compliance checks</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-lg mb-3 text-indigo-300">Existing Process</h4>
+            <p class="muted">
+              Manual validation by domain experts, with rule-based systems for common issues. 
+              This approach had several limitations:
+            </p>
+            <ul class="mt-3 space-y-2 text-sm muted list-disc list-inside">
+              <li>Scalability: Manual review doesn't scale with data volume</li>
+              <li>Coverage: Rule-based systems miss unknown patterns</li>
+              <li>Consistency: Human reviewers have varying thresholds</li>
+              <li>Latency: Days to weeks for complete validation cycles</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-6 p-4 rounded-xl bg-gradient-to-r from-indigo-500/10 to-fuchsia-500/10 border border-indigo-500/20">
+          <h4 class="font-semibold text-lg mb-2">The Core Problem</h4>
+          <p class="muted">
+            <span class="text-white font-semibold">"How to detect meaningful anomalies in pension calculations without 
+            ground-truth labels, while controlling false positives to maintain operational efficiency?"</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section id="methodology" class="mt-16">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-number">2</div>
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Methodology: Evolution from PF1 to PF4</h2>
+      </div>
+      <div class="mt-3 h-1 w-56 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500"></div>
+      
+      <div class="mt-6 glass rounded-3xl p-6 border border-white/10">
+        <div class="grid md:grid-cols-4 gap-4">
+          <div class="rounded-2xl bg-gradient-to-b from-indigo-500/10 to-transparent border border-indigo-500/20 p-5">
+            <p class="text-xs text-indigo-300 font-semibold mb-2">PHASE 1: PF1 (130/140)</p>
+            <p class="text-lg font-bold mb-2">Discovery & Exploration</p>
+            <ul class="mt-3 space-y-2 text-xs muted">
+              <li>• Initial data exploration and profiling</li>
+              <li>• Rule-based anomaly detection</li>
+              <li>• Statistical outlier detection tests</li>
+              <li>• Identified need for ML approach</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-gradient-to-b from-indigo-500/10 to-transparent border border-indigo-500/20 p-5">
+            <p class="text-xs text-indigo-300 font-semibold mb-2">PHASE 2: PF2</p>
+            <p class="text-lg font-bold mb-2">Stabilization</p>
+            <ul class="mt-3 space-y-2 text-xs muted">
+              <li>• Data heterogeneity handling</li>
+              <li>• Feature engineering pipeline</li>
+              <li>• Basic unsupervised ensemble</li>
+              <li>• Synthetic data augmentation</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-gradient-to-b from-indigo-500/10 to-transparent border border-indigo-500/20 p-5">
+            <p class="text-xs text-indigo-300 font-semibold mb-2">PHASE 3: PF3 (120/130/140)</p>
+            <p class="text-lg font-bold mb-2">Operational Focus</p>
+            <ul class="mt-3 space-y-2 text-xs muted">
+              <li>• Plan-specific pipelines</li>
+              <li>• Threshold calibration</li>
+              <li>• Reviewer workload optimization</li>
+              <li>• Performance benchmarking</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-gradient-to-b from-indigo-500/10 to-transparent border border-indigo-500/20 p-5">
+            <p class="text-xs text-indigo-300 font-semibold mb-2">PHASE 4: PF4</p>
+            <p class="text-lg font-bold mb-2">Hybrid + HITL</p>
+            <ul class="mt-3 space-y-2 text-xs muted">
+              <li>• Supervised refinement</li>
+              <li>• Human-in-the-Loop integration</li>
+              <li>• AWS SageMaker automation</li>
+              <li>• Production-ready pipeline</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-6 p-4 rounded-xl bg-white/5 border border-white/10">
+          <h4 class="font-semibold text-lg mb-2">Key Insight: The Hybrid Approach</h4>
+          <p class="muted text-sm">
+            The solution evolved from pure unsupervised learning to a <span class="text-white font-semibold">hybrid approach</span>: 
+            unsupervised methods for initial discovery, supervised models for refinement, and human feedback for continuous improvement. 
+            This addressed the label scarcity while maintaining operational efficiency.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section id="architecture" class="mt-16">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-number">3</div>
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">System Architecture & Design</h2>
+      </div>
+      <div class="mt-3 h-1 w-48 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500"></div>
+      
+      <div class="mt-6 glass rounded-3xl p-8 border border-white/10">
+        <h3 class="text-xl font-bold mb-6">End-to-End Pipeline Architecture</h3>
+        
+        <!-- Architecture Diagram -->
+        <div class="mb-8">
+          <div class="grid grid-cols-5 gap-3 text-center">
+            <div class="col-span-1">
+              <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+                <i class="fas fa-database text-2xl text-indigo-400 mb-2"></i>
+                <p class="text-xs font-semibold">S3 Input</p>
+                <p class="text-xs muted2 mt-1">CSV exports</p>
+              </div>
+            </div>
+            
+            <div class="col-span-1 flex items-center justify-center">
+              <i class="fas fa-arrow-right text-xl text-white/30"></i>
+            </div>
+            
+            <div class="col-span-1">
+              <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+                <i class="fas fa-broom text-2xl text-indigo-400 mb-2"></i>
+                <p class="text-xs font-semibold">Cleaning</p>
+                <p class="text-xs muted2 mt-1">Schema + QA</p>
+              </div>
+            </div>
+            
+            <div class="col-span-1 flex items-center justify-center">
+              <i class="fas fa-arrow-right text-xl text-white/30"></i>
+            </div>
+            
+            <div class="col-span-1">
+              <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+                <i class="fas fa-chart-bar text-2xl text-indigo-400 mb-2"></i>
+                <p class="text-xs font-semibold">Features</p>
+                <p class="text-xs muted2 mt-1">Ratios + Trends</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex justify-center my-4">
+            <i class="fas fa-arrow-down text-xl text-white/30"></i>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-4">
+            <div class="col-span-2">
+              <div class="rounded-xl bg-gradient-to-r from-indigo-500/10 to-fuchsia-500/10 border border-indigo-500/20 p-5">
+                <p class="text-sm font-semibold mb-2">Unsupervised Ensemble</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2 py-1 rounded-full bg-white/5 text-xs">Isolation Forest</span>
+                  <span class="px-2 py-1 rounded-full bg-white/5 text-xs">Autoencoder</span>
+                  <span class="px-2 py-1 rounded-full bg-white/5 text-xs">PCA + DBSCAN</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-span-1 flex items-center justify-center">
+              <i class="fas fa-sliders-h text-2xl text-white/30"></i>
+            </div>
+            
+            <div class="col-span-2">
+              <div class="rounded-xl bg-gradient-to-r from-indigo-500/10 to-fuchsia-500/10 border border-indigo-500/20 p-5">
+                <p class="text-sm font-semibold mb-2">Threshold Control</p>
+                <p class="text-xs muted">FP-constrained optimization</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex justify-center my-4">
+            <i class="fas fa-arrow-down text-xl text-white/30"></i>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-4">
+            <div class="col-span-1">
+              <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+                <p class="text-xs font-semibold">Review Output</p>
+                <p class="text-xs muted2 mt-1">Scored CSV</p>
+              </div>
+            </div>
+            
+            <div class="col-span-1 flex items-center justify-center">
+              <i class="fas fa-sync-alt text-xl text-indigo-400"></i>
+            </div>
+            
+            <div class="col-span-1">
+              <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+                <p class="text-xs font-semibold">Supervised Refinement</p>
+                <p class="text-xs muted2 mt-1">Random Forest</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Feature Engineering Details -->
+        <div class="mt-8">
+          <h4 class="font-semibold text-lg mb-4">Feature Engineering Strategy</h4>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+              <p class="text-sm font-semibold text-indigo-300 mb-2">Statistical Features</p>
+              <ul class="text-xs muted space-y-1">
+                <li>• Mean, median, std deviation</li>
+                <li>• Skewness and kurtosis</li>
+                <li>• Percentile distributions</li>
+                <li>• Z-scores for key metrics</li>
+              </ul>
+            </div>
+            
+            <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+              <p class="text-sm font-semibold text-indigo-300 mb-2">Temporal Features</p>
+              <ul class="text-xs muted space-y-1">
+                <li>• Year-over-year changes</li>
+                <li>• Monthly/quarterly trends</li>
+                <li>• Seasonality indicators</li>
+                <li>• Rate of change metrics</li>
+              </ul>
+            </div>
+            
+            <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+              <p class="text-sm font-semibold text-indigo-300 mb-2">Ratio Features</p>
+              <ul class="text-xs muted space-y-1">
+                <li>• Contribution-to-reserve ratios</li>
+                <li>• Interest accrual percentages</li>
+                <li>• Policy-specific benchmarks</li>
+                <li>• Deviation from plan averages</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPLEMENTATION -->
+    <section id="implementation" class="mt-16">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-number">4</div>
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Technical Implementation</h2>
+      </div>
+      <div class="mt-3 h-1 w-48 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500"></div>
+      
+      <div class="mt-6 glass rounded-3xl p-8 border border-white/10">
+        <h3 class="text-xl font-bold mb-6">Unsupervised Ensemble Design</h3>
+        
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent border border-indigo-500/20 p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="h-10 w-10 rounded-full bg-indigo-500/20 flex items-center justify-center">
+                <i class="fas fa-tree text-indigo-400"></i>
+              </div>
+              <p class="font-semibold">Isolation Forest</p>
+            </div>
+            <p class="text-sm muted">
+              Detects anomalies by isolating observations using random partitioning. 
+              Effective for high-dimensional data with no assumptions about distribution.
+            </p>
+            
+          </div>
+          
+          <div class="rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent border border-indigo-500/20 p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="h-10 w-10 rounded-full bg-indigo-500/20 flex items-center justify-center">
+                <i class="fas fa-network-wired text-indigo-400"></i>
+              </div>
+              <p class="font-semibold">Autoencoder</p>
+            </div>
+            <p class="text-sm muted">
+              Neural network trained to reconstruct normal data. 
+              High reconstruction error indicates anomalies. Captures complex non-linear patterns.
+            </p>
+           
+          </div>
+          
+          <div class="rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent border border-indigo-500/20 p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="h-10 w-10 rounded-full bg-indigo-500/20 flex items-center justify-center">
+                <i class="fas fa-project-diagram text-indigo-400"></i>
+              </div>
+              <p class="font-semibold">PCA + DBSCAN</p>
+            </div>
+            <p class="text-sm muted">
+              Dimensionality reduction followed by density-based clustering. 
+              Identifies outliers as points in low-density regions.
+            </p>
+            
+          </div>
+        </div>
+        
+        <!-- Threshold Strategy -->
+        <div class="rounded-2xl bg-gradient-to-r from-indigo-500/10 to-fuchsia-500/10 border border-indigo-500/20 p-6">
+          <h4 class="font-semibold text-lg mb-3">Threshold Strategy for Operational Efficiency</h4>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <p class="text-sm muted mb-3">
+                Instead of maximizing detection rate, we optimized for <span class="text-white font-semibold">operational efficiency</span>:
+              </p>
+              <div class="space-y-2 text-sm muted">
+                <div class="flex justify-between items-center">
+                  <span>Target FP Rate</span>
+                  <span class="font-semibold text-green-400">≤5%</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span>Optimal Threshold</span>
+                  <span class="font-semibold text-indigo-300">Percentile: 95th</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span>Review Workload</span>
+                  <span class="font-semibold text-indigo-300">~5% of policies</span>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <p class="text-sm muted mb-3">
+                This approach ensured sustainable operations:
+              </p>
+              <ul class="space-y-1 text-sm muted">
+                <li>• Manageable volume for human reviewers</li>
+                <li>• Consistent review quality</li>
+                <li>• Scalable across pension funds</li>
+                <li>• Predictable operational costs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AWS PIPELINE -->
+    <section id="aws" class="mt-16">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-number">5</div>
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">AWS SageMaker Pipeline Implementation</h2>
+      </div>
+      <div class="mt-3 h-1 w-72 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500"></div>
+      
+      <div class="mt-6 glass rounded-3xl p-8 border border-white/10">
+        <h3 class="text-xl font-bold mb-6">Production MLOps Workflow</h3>
+        
+        <!-- Pipeline Visualization -->
+        <div class="mb-8">
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div class="md:col-span-1 rounded-xl bg-white/5 border border-white/10 p-4 text-center">
+              <i class="fas fa-download text-2xl text-indigo-400 mb-2"></i>
+              <p class="text-xs font-semibold">Data Ingestion</p>
+              <p class="text-xs muted2 mt-1">S3 → Processing</p>
+            </div>
+            
+            <div class="md:col-span-1 flex items-center justify-center">
+              <i class="fas fa-arrow-right text-xl text-white/30"></i>
+            </div>
+            
+            <div class="md:col-span-1 rounded-xl bg-white/5 border border-white/10 p-4 text-center">
+              <i class="fas fa-cogs text-2xl text-indigo-400 mb-2"></i>
+              <p class="text-xs font-semibold">Processing</p>
+              <p class="text-xs muted2 mt-1">Clean + Features</p>
+            </div>
+            
+            <div class="md:col-span-1 flex items-center justify-center">
+              <i class="fas fa-arrow-right text-xl text-white/30"></i>
+            </div>
+            
+            <div class="md:col-span-1 rounded-xl bg-white/5 border border-white/10 p-4 text-center">
+              <i class="fas fa-brain text-2xl text-indigo-400 mb-2"></i>
+              <p class="text-xs font-semibold">Training</p>
+              <p class="text-xs muted2 mt-1">Model Training</p>
+            </div>
+          </div>
+          
+          <div class="flex justify-center my-4">
+            <i class="fas fa-arrow-down text-xl text-white/30"></i>
+          </div>
+          
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div class="md:col-span-2 rounded-xl bg-white/5 border border-white/10 p-4 text-center">
+              <i class="fas fa-chart-line text-2xl text-indigo-400 mb-2"></i>
+              <p class="text-xs font-semibold">Evaluation</p>
+              <p class="text-xs muted2 mt-1">Metrics + Thresholds</p>
+            </div>
+            
+            <div class="md:col-span-1 flex items-center justify-center">
+              <i class="fas fa-arrow-right text-xl text-white/30"></i>
+            </div>
+            
+            <div class="md:col-span-2 rounded-xl bg-white/5 border border-white/10 p-4 text-center">
+              <i class="fas fa-file-export text-2xl text-indigo-400 mb-2"></i>
+              <p class="text-xs font-semibold">Scoring</p>
+              <p class="text-xs muted2 mt-1">Batch Predictions</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pipeline Screenshots/Diagrams -->
+        <div class="grid md:grid-cols-3 gap-4 mb-8">
+          <figure class="rounded-2xl overflow-hidden border border-white/10 bg-black/30">
+            <img src="icons/clean_inject.png"
+                 alt="Data cleaning and anomaly injection step"
+                 class="w-full h-48 object-cover" />
+            <figcaption class="px-4 py-3 text-xs text-white/60 border-t border-white/10">
+              Data cleaning → anomaly injection → training
+            </figcaption>
+          </figure>
+          
+          <figure class="rounded-2xl overflow-hidden border border-white/10 bg-black/30">
+            <img src="icons/retraining.png"
+                 alt="Training pipeline step"
+                 class="w-full h-48 object-cover" />
+            <figcaption class="px-4 py-3 text-xs text-white/60 border-t border-white/10">
+              Training data construction and model training
+            </figcaption>
+          </figure>
+          
+          <figure class="rounded-2xl overflow-hidden border border-white/10 bg-black/30">
+            <img src="icons/scoring.png"
+                 alt="Scoring pipeline step"
+                 class="w-full h-48 object-cover" />
+            <figcaption class="px-4 py-3 text-xs text-white/60 border-t border-white/10">
+              Batch scoring producing review-ready outputs
+            </figcaption>
+          </figure>
+        </div>
+        
+        <!-- AWS Services Used -->
+        <div class="rounded-2xl bg-gradient-to-r from-indigo-500/10 to-fuchsia-500/10 border border-indigo-500/20 p-6">
+          <h4 class="font-semibold text-lg mb-4">AWS Services Configuration</h4>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <p class="text-sm font-semibold text-indigo-300 mb-2">Compute & ML</p>
+              <ul class="text-xs muted space-y-1">
+                <li>• SageMaker Processing Jobs</li>
+                <li>• SageMaker Training Jobs</li>
+                <li>• SageMaker Pipelines</li>
+                <li>• ml.m5.xlarge instances</li>
+              </ul>
+            </div>
+            
+            <div>
+              <p class="text-sm font-semibold text-indigo-300 mb-2">Storage & Data</p>
+              <ul class="text-xs muted space-y-1">
+                <li>• S3 for raw/processed data</li>
+                <li>• S3 for model artifacts</li>
+                <li>• S3 for output scores</li>
+                <li>• Versioned buckets</li>
+              </ul>
+            </div>
+            
+            <div>
+              <p class="text-sm font-semibold text-indigo-300 mb-2">Monitoring & Logging</p>
+              <ul class="text-xs muted space-y-1">
+                <li>• CloudWatch Metrics</li>
+                <li>• CloudWatch Logs</li>
+                <li>• S3 access logging</li>
+                <li>• Pipeline run tracking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HITL SYSTEM -->
+    <section id="hitl" class="mt-16">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-number">6</div>
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Human-in-the-Loop (HITL) System</h2>
+      </div>
+      <div class="mt-3 h-1 w-56 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500"></div>
+      
+      <div class="mt-6 glass rounded-3xl p-8 border border-white/10">
+        <h3 class="text-xl font-bold mb-6">Integrating Expert Knowledge</h3>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <h4 class="font-semibold text-lg mb-4 text-indigo-300">Review Workflow</h4>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="h-8 w-8 rounded-full bg-indigo-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span class="text-sm font-semibold">1</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-sm">Scoring Output</p>
+                  <p class="text-xs muted mt-1">Anomaly scores stored in S3 as CSV with policy identifiers</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3">
+                <div class="h-8 w-8 rounded-full bg-indigo-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span class="text-sm font-semibold">2</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-sm">Expert Review</p>
+                  <p class="text-xs muted mt-1">Domain experts label flagged policies as True/False anomalies</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3">
+                <div class="h-8 w-8 rounded-full bg-indigo-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span class="text-sm font-semibold">3</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-sm">Label Collection</p>
+                  <p class="text-xs muted mt-1">Labels merged back with training data by policy identifier</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3">
+                <div class="h-8 w-8 rounded-full bg-indigo-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span class="text-sm font-semibold">4</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-sm">Model Retraining</p>
+                  <p class="text-xs muted mt-1">Supervised model trained with human-validated labels</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-lg mb-4 text-indigo-300">Retraining Logic</h4>
+            <div class="rounded-2xl bg-gradient-to-r from-indigo-500/10 to-fuchsia-500/10 border border-indigo-500/20 p-5">
+              <p class="text-sm font-semibold mb-3">Training Data Construction</p>
+              <div class="space-y-3 text-sm muted">
+                <div class="flex items-center justify-between">
+                  <span>Start with:</span>
+                  <span class="font-semibold text-indigo-300">Injected anomalies</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span>Override with:</span>
+                  <span class="font-semibold text-indigo-300">Human labels</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span>Train:</span>
+                  <span class="font-semibold text-indigo-300">Random Forest classifier</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span>Recalibrate:</span>
+                  <span class="font-semibold text-indigo-300">Threshold for FP control</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Benefits -->
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+          <h4 class="font-semibold text-lg mb-3">Key Benefits of HITL Approach</h4>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <p class="text-sm font-semibold text-green-400 mb-2">Continuous Improvement</p>
+              <p class="text-xs muted">
+                Each review cycle improves model accuracy and reduces recurring false positives.
+              </p>
+            </div>
+            
+            <div>
+              <p class="text-sm font-semibold text-green-400 mb-2">Domain Knowledge Integration</p>
+              <p class="text-xs muted">
+                Experts' understanding of "business anomalies" captured in the model.
+              </p>
+            </div>
+            
+            <div>
+              <p class="text-sm font-semibold text-green-400 mb-2">Reduced Review Workload</p>
+              <p class="text-xs muted">
+                Over time, fewer false positives mean less time spent on manual review.
+              </p>
+            </div>
+            
+            <div>
+              <p class="text-sm font-semibold text-green-400 mb-2">Audit Trail</p>
+              <p class="text-xs muted">
+                Complete record of human decisions for compliance and debugging.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="mt-16">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-number">7</div>
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Results & Performance Metrics</h2>
+      </div>
+      <div class="mt-3 h-1 w-60 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500"></div>
+      
+      <div class="mt-6 glass rounded-3xl p-8 border border-white/10">
+        <h3 class="text-xl font-bold mb-6">Quantitative Outcomes</h3>
+        
+        <!-- Performance Metrics -->
+        <div class="grid md:grid-cols-4 gap-4 mb-8">
+          <div class="rounded-2xl bg-gradient-to-b from-green-500/10 to-transparent border border-green-500/20 p-5 text-center">
+            <div class="text-3xl font-bold text-green-400 mb-2">~70%</div>
+            <p class="text-xs font-semibold">Reduction in Manual Review</p>
+            <p class="text-xs muted2 mt-1">Time saved per validation cycle</p>
+          </div>
+          
+          <div class="rounded-2xl bg-gradient-to-b from-indigo-500/10 to-transparent border border-indigo-500/20 p-5 text-center">
+            <div class="text-3xl font-bold text-indigo-400 mb-2">≤5%</div>
+            <p class="text-xs font-semibold">False Positive Rate</p>
+            <p class="text-xs muted2 mt-1">Controlled threshold</p>
+          </div>
+          
+          <div class="rounded-2xl bg-gradient-to-b from-purple-500/10 to-transparent border border-purple-500/20 p-5 text-center">
+            <div class="text-3xl font-bold text-purple-400 mb-2">4</div>
+            <p class="text-xs font-semibold">Pension Funds</p>
+            <p class="text-xs muted2 mt-1">PF1, PF2, PF3, PF4 supported</p>
+          </div>
+          
+          <div class="rounded-2xl bg-gradient-to-b from-blue-500/10 to-transparent border border-blue-500/20 p-5 text-center">
+            <div class="text-3xl font-bold text-blue-400 mb-2">24/7</div>
+            <p class="text-xs font-semibold">Automated Operation</p>
+            <p class="text-xs muted2 mt-1">AWS pipeline availability</p>
+          </div>
+        </div>
+       
+      </div>
+    </section>
+
+    <!-- SUPPORTING DOCUMENTS -->
+    <section id="documents" class="mt-16">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="step-number">8</div>
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Supporting Documents & Reflection</h2>
+      </div>
+      <div class="mt-3 h-1 w-72 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500"></div>
+      
+      <div class="mt-6 glass rounded-3xl p-8 border border-white/10">
+        <h3 class="text-xl font-bold mb-6">Project Documentation</h3>
+        
+        <!-- Document Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent border border-indigo-500/20 p-5">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="h-12 w-12 rounded-xl bg-gradient-to-r from-indigo-500 to-fuchsia-500 flex items-center justify-center">
+                <i class="fas fa-file-alt text-white"></i>
+              </div>
+              <div>
+                <p class="font-semibold">Project Summary</p>
+                <p class="text-xs muted2">High-level overview</p>
+              </div>
+            </div>
+            <p class="text-sm muted mb-4">
+              Concise summary of the project goals, methodology, and key results.
+            </p>
+            <a href="docs/Reviewed_summary document vlast2.pdf" 
+               class="inline-flex items-center gap-2 text-sm text-indigo-300 hover:text-indigo-200 transition"  target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-download"></i>
+              Download PDF
+            </a>
+          </div>
+          
+          <div class="rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent border border-indigo-500/20 p-5">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="h-12 w-12 rounded-xl bg-gradient-to-r from-indigo-500 to-fuchsia-500 flex items-center justify-center">
+                <i class="fas fa-clipboard-check text-white"></i>
+              </div>
+              <div>
+                <p class="font-semibold">Realization Document</p>
+                <p class="text-xs muted2">Technical implementation</p>
+              </div>
+            </div>
+            <p class="text-sm muted mb-4">
+              Detailed technical documentation covering architecture, implementation, and AWS configuration.
+            </p>
+            <a href="docs/Realisation document v last 1812 finished.pdf" 
+               class="inline-flex items-center gap-2 text-sm text-indigo-300 hover:text-indigo-200 transition"  target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-download"></i>
+              Download PDF
+            </a>
+          </div>
+          
+          <div class="rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent border border-indigo-500/20 p-5">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="h-12 w-12 rounded-xl bg-gradient-to-r from-indigo-500 to-fuchsia-500 flex items-center justify-center">
+                <i class="fas fa-lightbulb text-white"></i>
+              </div>
+              <div>
+                <p class="font-semibold">Reflection & Learnings</p>
+                <p class="text-xs muted2">Personal insights</p>
+              </div>
+            </div>
+            <p class="text-sm muted mb-4">
+              Personal reflection on challenges faced, lessons learned, and professional growth.
+            </p>
+            <a href="docs/Reviewed_Reflection document vlast.pdf" 
+               class="inline-flex items-center gap-2 text-sm text-indigo-300 hover:text-indigo-200 transition"  target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-download"></i>
+              Download PDF
+            </a>
+          </div>
+        </div>
+        
+        <!-- Key Learnings -->
+        <div class="rounded-2xl bg-gradient-to-r from-indigo-500/10 to-fuchsia-500/10 border border-indigo-500/20 p-6">
+          <h4 class="font-semibold text-lg mb-4">Key Professional Learnings</h4>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h5 class="font-semibold text-indigo-300 mb-3">Technical Growth</h5>
+              <ul class="space-y-2 text-sm muted">
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check text-green-400 mt-1"></i>
+                  <span>Gained hands-on experience with AWS SageMaker Pipelines and MLOps workflows</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check text-green-400 mt-1"></i>
+                  <span>Developed expertise in anomaly detection algorithms and ensemble methods</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check text-green-400 mt-1"></i>
+                  <span>Mastered production ML deployment considerations and monitoring</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h5 class="font-semibold text-indigo-300 mb-3">Professional Development</h5>
+              <ul class="space-y-2 text-sm muted">
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check text-green-400 mt-1"></i>
+                  <span>Learned to balance technical perfection with operational pragmatism</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check text-green-400 mt-1"></i>
+                  <span>Developed stakeholder communication skills for technical projects</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check text-green-400 mt-1"></i>
+                  <span>Gained experience in project documentation and knowledge transfer</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BACK TO SUMMARY -->
+    <section class="mt-16 text-center">
+      <div class="glass rounded-3xl p-10">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Want to see more projects?</h2>
+        <p class="text-lg muted mb-8 max-w-2xl mx-auto">
+          Explore my other projects or get in touch to discuss machine learning, data engineering, or MLOps opportunities.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="internship.html" 
+             class="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-fuchsia-500 hover:opacity-95 transition font-semibold text-lg"  target="_blank" rel="noopener noreferrer">
+            Back to Internship Summary
+          </a>
+          <a href="portfolio.html" 
+             class="px-8 py-4 rounded-xl bg-white/10 border border-white/10 hover:bg-white/15 transition font-semibold text-lg" target="_blank" rel="noopener noreferrer">
+            View All Projects
+          </a>
+          <a href="contact.html" 
+             class="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 hover:opacity-95 transition font-semibold text-lg"  target="_blank" rel="noopener noreferrer">
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 mt-16">
+    <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <p>© <span id="year"></span> Aynur Guliyeva. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/aynurguliyeva" class="hover:text-white transition" aria-label="GitHub"  target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/aynur-guliyeva/" class="hover:text-white transition" aria-label="LinkedIn"  target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/khuliievaa/" class="hover:text-white transition" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
